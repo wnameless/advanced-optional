@@ -13,7 +13,7 @@
  * the License.
  *
  */
-package com.github.wnameless.advanced_optional;
+package com.github.wnameless.advancedoptional;
 
 import java.util.NoSuchElementException;
 import java.util.Objects;
