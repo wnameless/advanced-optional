@@ -56,11 +56,13 @@ public final class AdvOpt<T> {
   /**
    * Returns a translated message to describe this optional value.
    * 
+   * @param <U>
+   *          the class of returned value
    * @param translator
    *          a function to translate this message
    * @return a translated message to describe this optional value
    */
-  public String getMessage(Function<String, String> translator) {
+  public <U> U getMessage(Function<? super String, U> translator) {
     return translator.apply(message);
   }
 
