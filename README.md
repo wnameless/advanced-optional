@@ -25,8 +25,8 @@ Static factory methods:
 AdvOpt<String> valueButMsg = AdvOpt.of("Test"); // Same as AdvOpt.of("Test", null);
 AdvOpt<String> valueAndMsg = AdvOpt.of("Test", "Msg");
 AdvOpt<String> nullAndMsg = AdvOpt.ofNullable(null, "Msg");
-AdvOpt<String> nullButMsg = AdvOpt.ofNullable(null);
-AdvOpt<String> nullAndNull = AdvOpt.ofNullable(null, null);
+AdvOpt<String> nullButMsg = AdvOpt.ofNullable(null); // Equivalent to AdvOpt.empty()
+AdvOpt<String> nullAndNull = AdvOpt.ofNullable(null, null); // Equivalent to AdvOpt.empty()
 AdvOpt<String> optButMsg = AdvOpt.of(Optional.of("Test"));
 AdvOpt<String> optAndMsg = AdvOpt.of(Optional.of("Test"), "Msg");
 ```
