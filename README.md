@@ -5,11 +5,7 @@ advanced-optional
 An advanced version of Java Optional by adding an additional message and some convenient methods
 
 ## Purpose
-Java Optional is a good approach to prevent null exception.<br>
-However when a nullable Optional is created and returned,<br>
-it is hard to determine the reason why a nullable Optional has been created.<br>
-To provide an additional message to decribe an Optional is quiet useful in some scenarios.<br>
-Ex: When an entity cannot be found in Spring Web MVC
+Java Optional is a good approach to prevent null exception. However when a nullable Optional is created and returned, it is hard to determine the reason why a nullable Optional has been made. To provide an additional message to decribe an Optional is quiet useful in some scenarios.
 
 # Maven Repo
 ```xml
