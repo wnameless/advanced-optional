@@ -89,7 +89,7 @@ public final class AdvOpt<T> {
 
   private AdvOpt(T value, String message) {
     this.value = value;
-    this.message = message == null ? "" : message;
+    this.message = message;
   }
 
   /**
