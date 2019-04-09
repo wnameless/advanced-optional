@@ -6,6 +6,45 @@
 	<artifactId>advanced-optional</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 
+	<name>advanced-optional</name>
+	<description>An advanced version of Java Optional by adding an additional message and some convenient methods</description>
+	<url>https://github.com/wnameless/advanced-optional</url>
+
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+			<comments>A business-friendly OSS license</comments>
+		</license>
+	</licenses>
+
+	<scm>
+		<connection>scm:git:git@github.com:wnameless/advanced-optional.git</connection>
+		<developerConnection>scm:git:git@github.com:wnameless/advanced-optional.git</developerConnection>
+		<url>git@github.com:wnameless/advanced-optional.git</url>
+		<tag>HEAD</tag>
+	</scm>
+
+	<developers>
+		<developer>
+			<id>wnameless</id>
+			<name>Wei-Ming Wu</name>
+			<email>wnameless@gmail.com</email>
+		</developer>
+	</developers>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
