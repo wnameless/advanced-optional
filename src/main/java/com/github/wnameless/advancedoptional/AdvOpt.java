@@ -100,7 +100,8 @@ public final class AdvOpt<T> {
   }
 
   /**
-   * Returns an AdvOpt with the specified present non-null value.
+   * Returns an AdvOpt with the specified present non-null value and an optional
+   * message.
    * 
    * @param <T>
    *          the class of the value
@@ -108,10 +109,44 @@ public final class AdvOpt<T> {
    *          the value to be present, which must be non-null
    * @param message
    *          a message to describe this optional value
-   * @return an AdvOpt with the value present and a optional message
+   * @return an AdvOpt with the value present and an optional message
    */
   public static <T> AdvOpt<T> of(T value, String message) {
     return new AdvOpt<>(Objects.requireNonNull(value), message);
+  }
+
+  /**
+   * Returns an AdvOpt with the specified present value in given Optional.
+   * 
+   * @param <T>
+   *          the class of the value
+   * @param optional
+   *          the Optional which holds a value to be present, which must be
+   *          non-null
+   * @return an AdvOpt with the value held by given Optional present
+   */
+  public static <T> AdvOpt<T> of(Optional<T> optional) {
+    Objects.requireNonNull(optional);
+    return optional.isPresent() ? AdvOpt.of(optional.get()) : empty();
+  }
+
+  /**
+   * Returns an AdvOpt with the specified present value in given Optional.
+   * 
+   * @param <T>
+   *          the class of the value
+   * @param optional
+   *          the Optional which holds a value to be present, which must be
+   *          non-null
+   * @param message
+   *          a message to describe this optional value
+   * @return an AdvOpt with the value held by given Optional present and an
+   *         optional message
+   */
+  public static <T> AdvOpt<T> of(Optional<T> optional, String message) {
+    Objects.requireNonNull(optional);
+    return optional.isPresent() ? AdvOpt.of(optional.get(), message)
+        : AdvOpt.ofNullable(null, message);
   }
 
   /**
@@ -287,7 +322,7 @@ public final class AdvOpt<T> {
 
     AdvOpt<?> other = (AdvOpt<?>) obj;
     return Objects.equals(value, other.value)
-        && Objects.equals(message, message);
+        && Objects.equals(message, other.message);
   }
 
   @Override
@@ -297,7 +332,9 @@ public final class AdvOpt<T> {
 
   @Override
   public String toString() {
-    return value != null ? String.format("AdvOpt[%s]", value) : "AdvOpt.empty";
+    return value != null || message != null
+        ? String.format("AdvOpt[value=%s, message=%s]", value, message)
+        : "AdvOpt.empty";
   }
 
 }
