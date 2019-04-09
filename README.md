@@ -22,7 +22,7 @@ Advanced Optional contains all methods inside Java Optional and some more:<br>
 <br>
 Static factory methods:
 ```java
-AdvOpt<String> valueButMsg = AdvOpt.of("Test");
+AdvOpt<String> valueButMsg = AdvOpt.of("Test"); // Same as AdvOpt.of("Test", null);
 AdvOpt<String> valueAndMsg = AdvOpt.of("Test", "Msg");
 AdvOpt<String> nullAndMsg = AdvOpt.ofNullable(null, "Msg");
 AdvOpt<String> nullButMsg = AdvOpt.ofNullable(null);
