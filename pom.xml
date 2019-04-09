@@ -2,7 +2,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.github.wnameless</groupId>
 	<artifactId>advanced-optional</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 
 	<name>advanced-optional</name>
 	<description>An advanced version of Java Optional by adding an additional message and some convenient methods</description>
@@ -21,7 +21,7 @@
 		<connection>scm:git:git@github.com:wnameless/advanced-optional.git</connection>
 		<developerConnection>scm:git:git@github.com:wnameless/advanced-optional.git</developerConnection>
 		<url>git@github.com:wnameless/advanced-optional.git</url>
-		<tag>advanced-optional-1.0.0</tag>
+		<tag>HEAD</tag>
 	</scm>
 
 	<developers>
