@@ -150,6 +150,15 @@ public final class AdvOpt<T> {
   }
 
   /**
+   * Creates a Java Optional based on this {@link AdvOpt} value.
+   * 
+   * @return a Java Optional based on this {@link AdvOpt} value
+   */
+  public Optional<T> toOptional() {
+    return isPresent() ? Optional.of(value) : Optional.empty();
+  }
+
+  /**
    * @see {@link Optional#ofNullable(Object)}
    */
   public static <T> AdvOpt<T> ofNullable(T value) {

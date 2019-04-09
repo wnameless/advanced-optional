@@ -91,6 +91,15 @@ public class AdvOptTest {
   }
 
   @Test
+  public void toOptional() {
+    assertEquals(Optional.of("Test"), valueButMsg.toOptional());
+    assertEquals(Optional.of("Test"), valueAndMsg.toOptional());
+    assertSame(Optional.empty(), nullAndMsg.toOptional());
+    assertSame(Optional.empty(), nullButMsg.toOptional());
+    assertSame(Optional.empty(), nullAndNull.toOptional());
+  }
+
+  @Test
   public void testIdenticalEmpty() {
     assertSame(AdvOpt.empty(), AdvOpt.empty());
   }
