@@ -292,7 +292,7 @@ public final class AdvOpt<T> {
 
   @Override
   public int hashCode() {
-    return Objects.hashCode(value);
+    return Objects.hash(value, message);
   }
 
   @Override
