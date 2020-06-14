@@ -15,19 +15,20 @@
  */
 package com.github.wnameless.advancedoptional;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertSame;
-import static org.junit.Assert.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertSame;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.NoSuchElementException;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 public class AdvOptTest {
 
@@ -37,7 +38,7 @@ public class AdvOptTest {
   AdvOpt<String> nullButMsg;
   AdvOpt<String> nullAndNull;
 
-  @Before
+  @BeforeEach
   public void init() {
     valueButMsg = AdvOpt.of("Test");
     valueAndMsg = AdvOpt.of("Test", "Msg");
@@ -143,9 +144,11 @@ public class AdvOptTest {
   }
 
   // Tests of original Optional methods
-  @Test(expected = NoSuchElementException.class)
+  @Test
   public void testGetException() {
-    nullAndMsg.get();
+    assertThrows(NoSuchElementException.class, () -> {
+      nullAndMsg.get();
+    });
   }
 
   @Test
@@ -229,9 +232,12 @@ public class AdvOptTest {
     assertEquals("Test", valueButMsg.orElseThrow(() -> new RuntimeException()));
   }
 
-  @Test(expected = RuntimeException.class)
+  @Test
   public void testOrElseThrowException() {
-    nullButMsg.orElseThrow(() -> new RuntimeException());
+    assertThrows(RuntimeException.class, () -> {
+      nullButMsg.orElseThrow(() -> new RuntimeException());
+    });
+
   }
 
 }

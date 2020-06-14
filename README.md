@@ -12,7 +12,7 @@ Java Optional is a good approach to prevent null exception. However when a nulla
 <dependency>
 	<groupId>com.github.wnameless</groupId>
 	<artifactId>advanced-optional</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 
