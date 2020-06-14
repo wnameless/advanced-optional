@@ -15,6 +15,9 @@ Java Optional is a good approach to prevent null exception. However when a nulla
 	<version>1.0.1</version>
 </dependency>
 ```
+```diff
++ Java Module supported since v1.0.1
+```
 
 ## Quick Start
 
