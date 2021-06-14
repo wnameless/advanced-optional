@@ -48,12 +48,18 @@ public class AdvOptTest {
   }
 
   @Test
-  public void testIsAbsent() {
+  public void testIsAbsentAndIsEmpty() {
     assertFalse(valueButMsg.isAbsent());
     assertFalse(valueAndMsg.isAbsent());
     assertTrue(nullAndMsg.isAbsent());
     assertTrue(nullButMsg.isAbsent());
     assertTrue(nullAndNull.isAbsent());
+
+    assertFalse(valueButMsg.isEmpty());
+    assertFalse(valueAndMsg.isEmpty());
+    assertTrue(nullAndMsg.isEmpty());
+    assertTrue(nullButMsg.isEmpty());
+    assertTrue(nullAndNull.isEmpty());
   }
 
   @Test
