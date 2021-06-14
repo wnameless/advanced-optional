@@ -12,7 +12,7 @@ Java Optional is a good approach to prevent null exception. However when a nulla
 <dependency>
 	<groupId>com.github.wnameless</groupId>
 	<artifactId>advanced-optional</artifactId>
-	<version>1.0.1</version>
+	<version>1.0.2</version>
 </dependency>
 ```
 ```diff
@@ -34,10 +34,10 @@ AdvOpt<String> optButMsg = AdvOpt.of(Optional.of("Test"));
 AdvOpt<String> optAndMsg = AdvOpt.of(Optional.of("Test"), "Msg");
 ```
 
-isAbsent():
+isAbsent() or isEmpty():
 ```java
 assertFalse(valueAndMsg.isAbsent());
-assertTrue(nullAndMsg.isAbsent());
+assertTrue(nullAndMsg.isEmpty());
 ```
 
 toOptional():

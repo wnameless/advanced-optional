@@ -26,9 +26,9 @@ import java.util.stream.Stream;
 
 /**
  * 
- * {@link AdvOpt} is basically an Java {@link Optional}. What's more, it
- * contains an additional message to describe the optional value and some
- * convenient methods.
+ * {@link AdvOpt} is basically a Java {@link Optional}. What's more, it contains
+ * an additional message to describe the optional value and some convenient
+ * methods.
  *
  * @param <T>
  *          the class of the value
@@ -202,11 +202,20 @@ public final class AdvOpt<T> {
   }
 
   /**
-   * Return true if there is a value absent, otherwise false.
+   * Return true if there is a null value, otherwise false.
    * 
-   * @return true if there is a value absent, otherwise false
+   * @return true if there is a null value, otherwise false
    */
   public boolean isAbsent() {
+    return value == null;
+  }
+
+  /**
+   * Return true if there is a null value, otherwise false.
+   * 
+   * @return true if there is a null value, otherwise false
+   */
+  public boolean isEmpty() {
     return value == null;
   }
 
